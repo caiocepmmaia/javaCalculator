@@ -40,7 +40,7 @@ public class Screen extends JFrame{
                 "7","8","9",
                 "4","5","6",
                 "1","2","3",
-                "0"
+                "c","0",","
         };
 
         int colunm = 0;
@@ -60,7 +60,16 @@ public class Screen extends JFrame{
             btn.setFocusPainted(false);
 
             btn.addActionListener(e -> {
-                calculator.addNumber(e.getActionCommand());
+                String value = e.getActionCommand();
+
+                if (value.equals(",")){
+                    calculator.addDecimal();
+                }else if (value.equals("c")){
+                    calculator.clear();
+                }else {
+                    calculator.addNumber(value);
+                }
+
                 display.setText(calculator.getDisplayValue());
             });
 
@@ -74,7 +83,7 @@ public class Screen extends JFrame{
         }
 
         // Botão Operação
-        String[] ope = {"+","-","x", "/" };
+        String[] ope = {"<","+","-","x", "/" };
 
         int xOpe = 30 + 3 * (width + spacing);
 
@@ -91,8 +100,16 @@ public class Screen extends JFrame{
             btn.setFocusPainted(false);
 
             btn.addActionListener(e -> {
-                calculator.setOperator(e.getActionCommand());
-            });
+                String value = e.getActionCommand();
+                if (value.equals("<")){
+                    calculator.backspace();
+                }else {
+                    calculator.setOperator(value);
+                }
+                display.setText(calculator.getDisplayValue());
+
+            }
+            );
             add(btn);
         }
 
