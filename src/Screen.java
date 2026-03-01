@@ -7,7 +7,7 @@ public class Screen extends JFrame{
 
     public Screen() {
 
-        setTitle("Calculadora");
+        setTitle("JAVA Calculadora");
         setSize(400,550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
