@@ -7,17 +7,17 @@ public class Screen extends JFrame{
 
     public Screen() {
 
-        setTitle("Calculadora Básica");
-        setSize(420,550);
+        setTitle("Calculadora");
+        setSize(400,550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(new Color(35,35 ,35));
 
-        // Display
+
         JTextField display = new JTextField();
-        display.setBounds(30,30,340,60);
+        display.setBounds(30,30,325,60);
         display.setFont(new Font("Arial", Font.PLAIN, 28));
         display.setHorizontalAlignment(JTextField.RIGHT);
         display.setEditable(false);
@@ -25,7 +25,7 @@ public class Screen extends JFrame{
         display.setForeground(Color.WHITE);
         add(display);
 
-        // Configuração botões
+
         int width = 70;
         int height = 60;
         int spacing= 15;
@@ -34,7 +34,7 @@ public class Screen extends JFrame{
         int yInitial = 120;
 
         Font fontNum = new Font("Arial", Font.BOLD, 20);
-        // Numeros
+
 
         String[] num = {
                 "7","8","9",
@@ -82,7 +82,7 @@ public class Screen extends JFrame{
             }
         }
 
-        // Botão Operação
+
         String[] ope = {"<","+","-","x", "/" };
 
         int xOpe = 30 + 3 * (width + spacing);
@@ -113,7 +113,7 @@ public class Screen extends JFrame{
             add(btn);
         }
 
-        //result botão
+
 
         JButton btnResult = new JButton("=");
         btnResult.setBounds(30, 120 + 4 * (height + spacing), width * 3 + spacing * 2, height);
